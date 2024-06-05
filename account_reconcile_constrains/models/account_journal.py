@@ -17,6 +17,7 @@ _logger = logging.getLogger(__name__)
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
-    constrains_exclude_account_ids = fields.Many2many(
-        'account.account', string='Excluded Accounts'
+    excluded_account_ids = fields.Many2many(
+        'account.account', string='Excluded Accounts',
+        domain="[('company_id', '=', company_id)]", check_company=True
     )

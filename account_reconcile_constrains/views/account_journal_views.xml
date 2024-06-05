@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="account.view_account_journal_form"/>
             <field name="arch" type="xml">
                 <field name="account_control_ids" position="after">
-                    <field name="constrains_exclude_account_ids"
+                    <field name="excluded_account_ids"
                            widget="many2many_tags"/>
                 </field>
             </field>
